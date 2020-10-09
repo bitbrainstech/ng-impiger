@@ -4,4 +4,11 @@
 
 .example-container {
     height: 100%;
+    flex: 1 1 auto;
+}
+
+.example-sidemenu {
+    height: 100%;
+    width: 8%;
+    flex: 1 1 auto;
 }

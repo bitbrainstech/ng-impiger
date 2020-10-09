@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="onOpenMenu()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>My App</span>
@@ -11,10 +11,18 @@
     <mat-icon>share</mat-icon>
   </button> -->
 </mat-toolbar>
-
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>Drawer content....</mat-drawer>
-  <mat-drawer-content class="main-content">
-<router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav class="example-sidemenu" #sidenav mode="side" [(opened)]="menuOpen">
+    <mat-nav-list *ngFor="let menu of sidemenus">
+      <mat-list-item routerLink={{menu.path}}>
+        <!-- <a mat-list-item> -->
+          <mat-icon>{{menu.icon}}</mat-icon>
+          <span>{{menu.name}}</span>
+        <!-- </a> -->
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
