@@ -1,0 +1,113 @@
+{
+  "dashboard" : { 
+    "name" : "Dashboard 2",
+    "cards" : [
+      {
+        "title":"Total Patients", 
+        "total": 63,
+        "color": "card-header-purple",
+        "content": [
+          {"title": "Male", "value": 34,   "percentage": true},
+          {"title": "Female", "value": 29, "percentage": true},
+          {"title": "Unknown", "value": 0, "percentage": true},
+          {"title": "New This Week", "value": 6, "percentage": false}
+        ]
+      },
+      {
+        "title":"Dosage Summary", 
+        "total": 508, 
+        "color":"card-header-red",
+        "content": [
+          {"title": "Captured", "value": 94, "percentage": true},
+          {"title": "Missed", "value": 414, "percentage": true},
+          {"title": "Missed Last Week", "value": 257, "percentage": false}
+        ]
+      },
+      {
+        "title":"Dosage Captured", 
+        "total": 94, 
+        "color":"card-header-blue",
+        "content": [
+          {"title": "Scanned", "value": 21, "percentage": true},
+          {"title": "Manual", "value": 73, "percentage": true},
+          {"title": "Captured Last Week", "value": 71, "percentage": false}
+        ]
+      },
+      {
+        "title":"Doses Non Complaint", 
+        "total": 415, 
+        "color":"card-header-green",
+        "content": [
+          {"title": "Late", "value": 1, "percentage": true},
+          {"title": "Overdose", "value": 0, "percentage": true},
+          {"title": "Underdose", "value": 0, "percentage": true},
+          {"title": "Missed", "value": 414, "percentage": true}
+        ]
+      },
+      {
+        "title":"Doses Distributed", 
+        "total": 187, 
+        "color":"card-header-orange",
+        "content": [
+          {"title": "Avg Per Person", "value": 5.7," percentage": false},
+          {"title": "Avg Per Trial", "value": 11, "percentage": false},
+          {"title": "Distributed Last Week", "value": 92, "percentage": false}
+        ]
+      }
+    ],
+    "charts" : [
+      [
+        {
+          "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+          "datasets": [
+            {"label": "Missed", "data": [4, 11, 21, 28, 36, 41, 62]},
+            {"label": "Taken", "data": [3, 4, 3, 0, 7, 9, 5]}
+          ],
+          "token": "DAILY"
+        },
+        {
+          "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+          "datasets": [
+            {"label": "Missed", "data": [114, 132, 125, 140, 152, 165, 171]},
+            {"label": "Taken", "data": [19, 35, 51, 70, 77, 69, 75]}
+          ],
+          "token": "WEEKLY"
+        },
+        {
+          "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+          "datasets": [
+            {"label": "Missed", "data": [404, 411, 421, 428, 436, 441, 462]},
+            {"label": "Taken", "data": [114, 132, 125, 140, 152, 165, 171]}
+          ],
+          "token": "MONTHLY"
+        }
+      ],
+      [
+        {
+          "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+          "datasets": [
+            {"label": "Adherence", "data": [40, 28, 5, 0, 10, 17, 9]},
+            {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100]}
+          ],
+          "token": "DAILY"
+        },
+        {
+          "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+          "datasets": [
+            {"label": "Adherence", "data": [34, 28, 15, 7, 10, 21, 9]},
+            {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100]}
+          ],
+          "token": "WEEKLY"
+        },
+        {
+          "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+          "datasets": [
+            {"label": "Adherence", "data": [44, 28, 5, 3, 22, 17, 19]},
+            {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100]}
+          ],
+          "token": "MONTHLY"
+        }
+      ]
+    ]
+  }
+}
