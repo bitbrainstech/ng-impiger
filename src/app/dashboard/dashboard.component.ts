@@ -14,12 +14,17 @@ export class DashboardComponent implements OnInit {
   dosageAdheranceVsTarget: any[];
   options: any;
   dashboard : any;
+  selectedCompany : 'all';
+  breakpointCards: any;
+  breakpointCharts: any;
 
-  constructor(dataService: DataService) {
+  constructor(private dataService: DataService) {
+
     dataService.getData().then((data: any) => {
-      this.dosageHistory = {...data.dashboard.charts.dosageHistory.daily};
-      this.dosageAdheranceVsTarget = {...data.dashboard.charts.dosageAdheranceVsTarget.daily};
-      this.dashboard = data.dashboard;
+      this.dosageHistory = {...data.dashboard.all.charts.dosageHistory.daily};
+      this.dosageAdheranceVsTarget = {...data.dashboard.all.charts.dosageAdheranceVsTarget.daily};
+      this.dashboard = data.dashboard.all;
+      console.log('this.dashboard', this.dashboard);
     });
 
     this.type = 'line';
@@ -28,12 +33,31 @@ export class DashboardComponent implements OnInit {
       maintainAspectRatio: false
     };
     
-   }
-   ngOnChanges()	 {
-   }
+  }
+  ngOnChanges()	 {}
 
   ngOnInit(): void {
-    
+    this.onResponsive(window.innerWidth);
+  }
+
+  onResize(event) {
+    this.onResponsive(event.target.innerWidth);
+  }
+
+  onResponsive(width) {
+    if(width <= 650) {
+      this.breakpointCards = 1;
+    } else if (width > 650 &&  width <= 970) {
+      this.breakpointCards = 2;
+    } else if (width > 970 &&  width <= 1200) {
+      this.breakpointCards = 3;
+    } else if (width > 1200 &&  width <= 1600) {
+      this.breakpointCards = 4;
+    } else if (width > 1600) {
+      this.breakpointCards = 5;
+    }
+
+    this.breakpointCharts = width <= 970 ? 1 : 2;
   }
 
   radioHistoryChange($event: MatRadioChange) {
@@ -44,6 +68,15 @@ export class DashboardComponent implements OnInit {
   radioTargetChange($event: MatRadioChange) {
     // console.log ($event.value);
     this.dosageAdheranceVsTarget = {...this.dashboard.charts.dosageAdheranceVsTarget[$event.value]};
+  }
+
+  onCompanyChange($event) {
+    console.log ('onselect', $event.value);
+    this.dataService.getData().then((data: any) => {
+      this.dosageHistory = {...data.dashboard[$event.value].charts.dosageHistory.daily};
+      this.dosageAdheranceVsTarget = {...data.dashboard[$event.value].charts.dosageAdheranceVsTarget.daily};
+      this.dashboard = data.dashboard[$event.value];
+    });
   }
 
 }

@@ -1,113 +1,339 @@
 {
   "dashboard" : { 
     "name" : "Dashboard 2",
-    "cards" : [
-      {
-        "title":"Total Patients", 
-        "total": 63,
-        "color": "card-header-purple",
-        "content": [
-          {"title": "Male", "value": 34,   "percentage": true},
-          {"title": "Female", "value": 29, "percentage": true},
-          {"title": "Unknown", "value": 0, "percentage": true},
-          {"title": "New This Week", "value": 6, "percentage": false}
-        ]
-      },
-      {
-        "title":"Dosage Summary", 
-        "total": 508, 
-        "color":"card-header-red",
-        "content": [
-          {"title": "Captured", "value": 94, "percentage": true},
-          {"title": "Missed", "value": 414, "percentage": true},
-          {"title": "Missed Last Week", "value": 257, "percentage": false}
-        ]
-      },
-      {
-        "title":"Dosage Captured", 
-        "total": 94, 
-        "color":"card-header-blue",
-        "content": [
-          {"title": "Scanned", "value": 21, "percentage": true},
-          {"title": "Manual", "value": 73, "percentage": true},
-          {"title": "Captured Last Week", "value": 71, "percentage": false}
-        ]
-      },
-      {
-        "title":"Doses Non Complaint", 
-        "total": 415, 
-        "color":"card-header-green",
-        "content": [
-          {"title": "Late", "value": 1, "percentage": true},
-          {"title": "Overdose", "value": 0, "percentage": true},
-          {"title": "Underdose", "value": 0, "percentage": true},
-          {"title": "Missed", "value": 414, "percentage": true}
-        ]
-      },
-      {
-        "title":"Doses Distributed", 
-        "total": 187, 
-        "color":"card-header-orange",
-        "content": [
-          {"title": "Avg Per Person", "value": 5.7," percentage": false},
-          {"title": "Avg Per Trial", "value": 11, "percentage": false},
-          {"title": "Distributed Last Week", "value": 92, "percentage": false}
-        ]
-      }
-    ],
-    "charts" : {
-      "dosageHistory": {
-        "daily" : {
-          "name" : "daily",
-          "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
-          "datasets": [
-            {"label": "Missed", "data": [4, 11, 21, 28, 36, 41, 62], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
-            {"label": "Taken", "data": [3, 4, 3, 0, 7, 9, 5], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+    "all" : {
+      "cards" : [
+        {
+          "title":"Total Patients", 
+          "total": 63,
+          "color": "card-header-purple",
+          "content": [
+            {"title": "Male", "value": 34,   "percentage": true},
+            {"title": "Female", "value": 29, "percentage": true},
+            {"title": "Unknown", "value": 0, "percentage": true},
+            {"title": "New This Week", "value": 6, "percentage": false}
           ]
         },
-        "weekly" : {
-          "name" : "weekly",
-          "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
-          "datasets": [
-            {
-              "label": "Missed", "data": [114, 132, 125, 140, 152, 165, 171], 
-              "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 
-            },
-            {
-              "label": "Taken", "data": [19, 35, 51, 70, 77, 69, 75], 
-              "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 
-              }
+        {
+          "title":"Dosage Summary", 
+          "total": 508, 
+          "color":"card-header-red",
+          "content": [
+            {"title": "Captured", "value": 94, "percentage": true},
+            {"title": "Missed", "value": 414, "percentage": true},
+            {"title": "Missed Last Week", "value": 257, "percentage": false}
           ]
         },
-        "monthly" : {
-          "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
-          "datasets": [
-            {"label": "Missed", "data": [404, 411, 421, 428, 436, 441, 462], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
-            {"label": "Taken", "data": [114, 132, 125, 140, 152, 165, 171], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+        {
+          "title":"Dosage Captured", 
+          "total": 94, 
+          "color":"card-header-blue",
+          "content": [
+            {"title": "Scanned", "value": 21, "percentage": true},
+            {"title": "Manual", "value": 73, "percentage": true},
+            {"title": "Captured Last Week", "value": 71, "percentage": false}
+          ]
+        },
+        {
+          "title":"Doses Non Complaint", 
+          "total": 415, 
+          "color":"card-header-green",
+          "content": [
+            {"title": "Late", "value": 1, "percentage": true},
+            {"title": "Overdose", "value": 0, "percentage": true},
+            {"title": "Underdose", "value": 0, "percentage": true},
+            {"title": "Missed", "value": 414, "percentage": true}
+          ]
+        },
+        {
+          "title":"Doses Distributed", 
+          "total": 187, 
+          "color":"card-header-orange",
+          "content": [
+            {"title": "Avg Per Person", "value": 5.7," percentage": false},
+            {"title": "Avg Per Trial", "value": 11, "percentage": false},
+            {"title": "Distributed Last Week", "value": 92, "percentage": false}
           ]
         }
-      },
-      "dosageAdheranceVsTarget" : {
-        "daily": {
-          "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
-          "datasets": [
-            {"label": "Adherence", "data": [40, 28, 5, 0, 10, 17, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
-            {"label": "Company Target %", "data": [100, 200, 300, 400, 100, 200, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+      ],
+      "charts" : {
+        "dosageHistory": {
+          "daily" : {
+            "name" : "daily",
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [4, 11, 21, 28, 36, 41, 62], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [3, 4, 3, 0, 7, 9, 5], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly" : {
+            "name" : "weekly",
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {
+                "label": "Missed", "data": [114, 132, 125, 140, 152, 165, 171], 
+                "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 
+              },
+              {
+                "label": "Taken", "data": [19, 35, 51, 70, 77, 69, 75], 
+                "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 
+                }
+            ]
+          },
+          "monthly" : {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [404, 411, 421, 428, 436, 441, 462], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [114, 132, 125, 140, 152, 165, 171], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
+        },
+        "dosageAdheranceVsTarget" : {
+          "daily": {
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [40, 28, 5, 0, 10, 17, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 300, 400, 100, 200, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly": {
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [34, 28, 15, 7, 10, 21, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 100, 300, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "monthly": {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [44, 28, 5, 3, 22, 17, 19], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
+        }
+      }
+    },
+    "ABC" : {
+      "cards" : [
+        {
+          "title":"Total Patients", 
+          "total": 55,
+          "color": "card-header-purple",
+          "content": [
+            {"title": "Male", "value": 31,   "percentage": true},
+            {"title": "Female", "value": 24, "percentage": true},
+            {"title": "Unknown", "value": 0, "percentage": true},
+            {"title": "New This Week", "value": 6, "percentage": false}
           ]
         },
-        "weekly": {
-          "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
-          "datasets": [
-            {"label": "Adherence", "data": [34, 28, 15, 7, 10, 21, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
-            {"label": "Company Target %", "data": [100, 200, 100, 300, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+        {
+          "title":"Dosage Summary", 
+          "total": 444, 
+          "color":"card-header-red",
+          "content": [
+            {"title": "Captured", "value": 44, "percentage": true},
+            {"title": "Missed", "value": 400, "percentage": true},
+            {"title": "Missed Last Week", "value": 222, "percentage": false}
           ]
         },
-        "monthly": {
-          "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
-          "datasets": [
-            {"label": "Adherence", "data": [44, 28, 5, 3, 22, 17, 19], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
-            {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+        {
+          "title":"Dosage Captured", 
+          "total": 101, 
+          "color":"card-header-blue",
+          "content": [
+            {"title": "Scanned", "value": 33, "percentage": true},
+            {"title": "Manual", "value": 68, "percentage": true},
+            {"title": "Captured Last Week", "value": 66, "percentage": false}
           ]
+        },
+        {
+          "title":"Doses Non Complaint", 
+          "total": 432, 
+          "color":"card-header-green",
+          "content": [
+            {"title": "Late", "value": 9, "percentage": true},
+            {"title": "Overdose", "value": 0, "percentage": true},
+            {"title": "Underdose", "value": 0, "percentage": true},
+            {"title": "Missed", "value": 423, "percentage": true}
+          ]
+        },
+        {
+          "title":"Doses Distributed", 
+          "total": 187, 
+          "color":"card-header-orange",
+          "content": [
+            {"title": "Avg Per Person", "value": 5.7," percentage": false},
+            {"title": "Avg Per Trial", "value": 11, "percentage": false},
+            {"title": "Distributed Last Week", "value": 92, "percentage": false}
+          ]
+        }
+      ],
+      "charts" : {
+        "dosageHistory": {
+          "daily" : {
+            "name" : "daily",
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [5, 13, 23, 28, 36, 45, 66], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [3, 4, 3, 0, 7, 9, 5], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly" : {
+            "name" : "weekly",
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {
+                "label": "Missed", "data": [111, 122, 111, 140, 166, 170, 140], 
+                "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 
+              },
+              {
+                "label": "Taken", "data": [19, 35, 51, 70, 77, 69, 75], 
+                "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 
+                }
+            ]
+          },
+          "monthly" : {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [448, 455, 421, 428, 432, 450, 458], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [114, 132, 125, 140, 152, 165, 171], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
+        },
+        "dosageAdheranceVsTarget" : {
+          "daily": {
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [32, 28, 5, 2, 13, 18, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 300, 400, 100, 200, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly": {
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [38, 28, 11, 11, 0, 15, 9], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 100, 300, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "monthly": {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [33, 13, 5, 3, 35, 11, 35], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
+        }
+      }
+    },
+    "XYZ" : {
+      "cards" : [
+        {
+          "title":"Total Patients", 
+          "total": 51,
+          "color": "card-header-purple",
+          "content": [
+            {"title": "Male", "value": 25,   "percentage": true},
+            {"title": "Female", "value": 26, "percentage": true},
+            {"title": "Unknown", "value": 0, "percentage": true},
+            {"title": "New This Week", "value": 6, "percentage": false}
+          ]
+        },
+        {
+          "title":"Dosage Summary", 
+          "total": 488, 
+          "color":"card-header-red",
+          "content": [
+            {"title": "Captured", "value": 88, "percentage": true},
+            {"title": "Missed", "value": 400, "percentage": true},
+            {"title": "Missed Last Week", "value": 222, "percentage": false}
+          ]
+        },
+        {
+          "title":"Dosage Captured", 
+          "total": 80, 
+          "color":"card-header-blue",
+          "content": [
+            {"title": "Scanned", "value": 20, "percentage": true},
+            {"title": "Manual", "value": 60, "percentage": true},
+            {"title": "Captured Last Week", "value": 76, "percentage": false}
+          ]
+        },
+        {
+          "title":"Doses Non Complaint", 
+          "total": 500, 
+          "color":"card-header-green",
+          "content": [
+            {"title": "Late", "value": 96, "percentage": true},
+            {"title": "Overdose", "value": 0, "percentage": true},
+            {"title": "Underdose", "value": 4, "percentage": true},
+            {"title": "Missed", "value": 400, "percentage": true}
+          ]
+        },
+        {
+          "title":"Doses Distributed", 
+          "total": 200, 
+          "color":"card-header-orange",
+          "content": [
+            {"title": "Avg Per Person", "value": 5.7," percentage": false},
+            {"title": "Avg Per Trial", "value": 80, "percentage": false},
+            {"title": "Distributed Last Week", "value": 112, "percentage": false}
+          ]
+        }
+      ],
+      "charts" : {
+        "dosageHistory": {
+          "daily" : {
+            "name" : "daily",
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [2, 14, 24, 33, 41, 51, 62], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [2, 4, 3, 1, 7, 8, 5], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly" : {
+            "name" : "weekly",
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {
+                "label": "Missed", "data": [99, 111, 125, 133, 142, 155, 160], 
+                "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 
+              },
+              {
+                "label": "Taken", "data": [21, 35, 42, 67, 71, 69, 80], 
+                "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 
+                }
+            ]
+          },
+          "monthly" : {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Missed", "data": [380, 412, 416, 428, 441, 451, 462], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Taken", "data": [102, 121, 130, 140, 152, 162, 172], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
+        },
+        "dosageAdheranceVsTarget" : {
+          "daily": {
+            "labels": ["Today", "Yesterday", "2 Days Ago", "3 Days Ago", "4 Days Ago", "5 Days Ago", "7 Days Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [38, 27, 3, 0, 12, 15, 10], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 250, 400, 100, 200, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "weekly": {
+            "labels": ["This Week", "Last Week", "2 Weeks Ago", "3 Weeks Ago", "4 Weeks Ago", "5 Weeks Ago", "7 Weeks Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [33, 27, 16, 9, 15, 21, 18], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 200, 100, 300, 200, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          },
+          "monthly": {
+            "labels": ["This Month", "Last Month", "2 Months Ago", "3 Months Ago", "4 Months Ago", "5 Months Ago", "7 Months Ago"],
+            "datasets": [
+              {"label": "Adherence", "data": [38, 28, 4, 3, 19, 15, 21], "backgroundColor": ["rgba(255, 99, 132, 0.2)"], "borderColor": ["rgba(255, 99, 132, 1)"], "borderWidth": 1 },
+              {"label": "Company Target %", "data": [100, 100, 100, 100, 100, 100, 100], "backgroundColor": ["rgba(54, 162, 235, 0.2)"], "borderColor": ["rgba(54, 162, 235, 1)"], "borderWidth": 1 }
+            ]
+          }
         }
       }
     }

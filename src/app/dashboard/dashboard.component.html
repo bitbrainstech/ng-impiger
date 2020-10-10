@@ -1,8 +1,22 @@
 <div>
-    <h2><span>Dashboard</span></h2>
+    <div>
+        <div class="page-header1">
+            <span class="page-header">Dashboard</span>
+            <mat-form-field appearance="outline" class="company-select">
+                <!-- <mat-label>Select Company</mat-label> -->
+                <mat-select [(value)]="selectedCompany" (selectionChange)="onCompanyChange($event)">
+                <mat-option value="all">All Companies</mat-option>
+                <mat-option value="ABC">Abc</mat-option>
+                <mat-option value="XYZ">Xyz</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <label class="company-select company-select2">Select Company</label>
+        </div>
+    </div>
+   
     <hr>
-    <mat-grid-list cols="5">
-        <mat-grid-tile *ngFor="let card of dashboard.cards">
+    <mat-grid-list [cols]="breakpointCards" (window:resize)="onResize($event)">
+        <mat-grid-tile *ngFor="let card of dashboard.cards" >
             <mat-card class="example-card">
                 <mat-card-header class="{{card.color}}">
                     <div class="w-100">
@@ -27,8 +41,8 @@
         </mat-grid-tile>
     </mat-grid-list>
     <div class="w-100">
-        <mat-grid-list cols="2" rowHeight="450px">
-            <mat-grid-tile [colspan]="1">
+        <mat-grid-list [cols]="breakpointCharts" (window:resize)="onResize($event)" rowHeight="450px">
+            <mat-grid-tile>
                 <mat-card class="report-card">
                     <mat-card-header class="example-card-header">
                         <div class="w-100">
@@ -46,7 +60,7 @@
                 </mat-card>
             </mat-grid-tile>
 
-            <mat-grid-tile  [colspan]="1">
+            <mat-grid-tile>
                 <mat-card class="report-card">
                     <mat-card-header class="example-card-header">
                         <div class="w-100">
