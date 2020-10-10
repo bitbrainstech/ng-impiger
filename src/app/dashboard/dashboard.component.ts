@@ -10,19 +10,16 @@ import { DataService } from '../data.service';
 export class DashboardComponent implements OnInit {
 
   type: string;
-  historyData: any[];
-  targetData: any[];
+  dosageHistory: any[];
+  dosageAdheranceVsTarget: any[];
   options: any;
-  historyRadio: 'DAILY';
-  targetRadio: 'DAILY';
-
   dashboard : any;
 
   constructor(dataService: DataService) {
     dataService.getData().then((data: any) => {
+      this.dosageHistory = {...data.dashboard.charts.dosageHistory.daily};
+      this.dosageAdheranceVsTarget = {...data.dashboard.charts.dosageAdheranceVsTarget.daily};
       this.dashboard = data.dashboard;
-      this.historyData = data.dashboard.charts[0].find(dt => dt.token === 'DAILY');
-      this.targetData = data.dashboard.charts[1].find(dt => dt.token === 'DAILY');
     });
 
     this.type = 'line';
@@ -36,24 +33,17 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.historyRadio = this.targetRadio = 'DAILY';
     
   }
 
   radioHistoryChange($event: MatRadioChange) {
-    this.historyRadio =$event.value;
-    let fil = this.dashboard.charts[0].find(dt => dt.token === $event.value);
-    let dat: any = {
-      labels: fil.labels,
-      datasets: fil.datasets
-    }
-    this.historyData = dat;
-    console.log('rafdioooo', this.dashboard.charts, $event.value);
+    // console.log ($event.value);
+    this.dosageHistory = {...this.dashboard.charts.dosageHistory[$event.value]};
   }
 
   radioTargetChange($event: MatRadioChange) {
-    this.targetRadio =$event.value;
-    this.targetData = this.dashboard.charts[1].find(dt => dt.token === $event.value);
+    // console.log ($event.value);
+    this.dosageAdheranceVsTarget = {...this.dashboard.charts.dosageAdheranceVsTarget[$event.value]};
   }
 
 }

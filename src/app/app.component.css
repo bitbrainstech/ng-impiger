@@ -12,3 +12,7 @@
     width: 8%;
     flex: 1 1 auto;
 }
+
+.mat-drawer-container {
+    background-color: #3f51b512;
+}

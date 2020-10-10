@@ -27,38 +27,39 @@
         </mat-grid-tile>
     </mat-grid-list>
     <div class="w-100">
-        <mat-grid-list cols="2">
-
+        <mat-grid-list cols="2" rowHeight="450px">
             <mat-grid-tile [colspan]="1">
-                <mat-card class="example-card2">
+                <mat-card class="report-card">
                     <mat-card-header class="example-card-header">
                         <div class="w-100">
+                        <div class="example-heading">Dosage History</div>
                             <mat-radio-group (change)="radioHistoryChange($event)">
-                                <mat-radio-button value="DAILY" [checked]="true">Daily</mat-radio-button>
-                                <mat-radio-button value="WEEKLY">Weekly</mat-radio-button>
-                                <mat-radio-button value="MONTHLY">Monthly</mat-radio-button>
+                                <mat-radio-button value="daily" [checked]="true">Daily</mat-radio-button>
+                                <mat-radio-button value="weekly">Weekly</mat-radio-button>
+                                <mat-radio-button value="monthly">Monthly</mat-radio-button>
                             </mat-radio-group>
                         </div>
                     </mat-card-header>
                     <mat-card-content>
-                        <chart [type]="type" [data]="historyData" [options]="options"></chart>
+                        <chart class="report-chart" [type]="type" [data]="dosageHistory" [options]="options"></chart>
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
 
             <mat-grid-tile  [colspan]="1">
-                <mat-card class="example-card2">
+                <mat-card class="report-card">
                     <mat-card-header class="example-card-header">
                         <div class="w-100">
+                            <div class="example-heading">Dosage Adherence Vs. Target</div>
                             <mat-radio-group (change)="radioTargetChange($event)">
-                                <mat-radio-button value="DAILY" [checked]="true">Daily</mat-radio-button>
-                                <mat-radio-button value="WEEKLY">Weekly</mat-radio-button>
-                                <mat-radio-button value="MONTHLY">Monthly</mat-radio-button>
+                                <mat-radio-button value="daily" [checked]="true">Daily</mat-radio-button>
+                                <mat-radio-button value="weekly">Weekly</mat-radio-button>
+                                <mat-radio-button value="monthly">Monthly</mat-radio-button>
                             </mat-radio-group>
                         </div>
                     </mat-card-header>
                     <mat-card-content>
-                        <chart [type]="type" [data]="targetData" [options]="options"></chart>
+                        <chart class="report-chart" [type]="type" [data]="dosageAdheranceVsTarget" [options]="options"></chart>
                     </mat-card-content>
                 </mat-card>
             </mat-grid-tile>
