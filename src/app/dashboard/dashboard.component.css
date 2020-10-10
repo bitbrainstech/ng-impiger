@@ -1,0 +1,43 @@
+/* .example-card {
+    width: 90%;
+    height: 215px;
+} */
+
+.example-card-header {
+    /* background-color: blueviolet; */
+    padding: 15px;
+}
+/* .mat-card {
+    margin-right: 0px;
+} */
+
+.w-100{ width:100%;}
+
+.mat-card { padding: 0; }
+
+.example-card {
+    width: 90%;
+    height: 250px;
+}
+
+.card-header-red {
+    background-color: rgb(255, 99, 132);
+}
+.card-header-orange {
+    background-color: rgb(255, 159, 64);
+}
+.card-header-yellow {
+    background-color: rgb(255, 205, 86);
+}
+.card-header-green {
+    background-color: rgb(75, 192, 192);
+}
+.card-header-blue {
+    background-color: rgb(54, 162, 235);
+}
+.card-header-purple {
+    background-color: rgb(153, 102, 255);
+}
+.card-header-grey {
+    background-color: rgb(201, 203, 207);
+}

@@ -1,1 +1,43 @@
-<p>dashboard works!</p>
+<div>
+            <h2><span>Dashboard</span></h2>
+            <hr>
+            <mat-grid-list cols="5">
+                <mat-grid-tile *ngFor="let card of dashboard.cards">
+                    <mat-card class="example-card">
+                        <mat-card-header class="{{card.color}}">
+                            <div class="w-100">
+                                <mat-grid-list cols="8">
+                                    <mat-grid-tile [colspan]="1" [rowspan]="2">
+                                        <mat-card-subtitle>{{card.total}}</mat-card-subtitle>
+                                    </mat-grid-tile>
+                                    <mat-grid-tile [colspan]="7" [rowspan]="2">
+                                        <mat-card-title>{{card.title}}</mat-card-title>
+                                    </mat-grid-tile>
+                                </mat-grid-list>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <mat-grid-list cols="6" *ngFor="let cont of card.content">
+                                <mat-grid-tile [colspan]="1">{{cont.value}}</mat-grid-tile>
+                                <mat-grid-tile [colspan]="4">{{cont.title}}</mat-grid-tile>
+                                <mat-grid-tile [colspan]="1">{{((cont.value * 100)/card.total).toFixed(0)}}%</mat-grid-tile>
+                            </mat-grid-list>
+                        </mat-card-content>
+                        <!-- <mat-card-actions>
+                          <button mat-button>LIKE</button>
+                          <button mat-button>SHARE</button>
+                        </mat-card-actions> -->
+                      </mat-card>
+                </mat-grid-tile>
+              </mat-grid-list>
+            <!-- <mat-grid-list cols="6">
+                <mat-grid-tile *ngFor="let dat of data">
+                    <mat-radio-group [(ngModel)]="favoriteSeason">
+                        <mat-radio-button value="DAILY">Daily</mat-radio-button>
+                        <mat-radio-button value="WEEKLY">Weekly</mat-radio-button>
+                        <mat-radio-button value="MONTHLY">Monthly</mat-radio-button>
+                    </mat-radio-group>
+                <chart [type]="type" [data]="dat" [options]="options"></chart>
+        </mat-grid-list> -->
+
+</div>
