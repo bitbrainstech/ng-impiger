@@ -34,7 +34,7 @@
                     <mat-grid-list cols="6" *ngFor="let cont of card.content">
                         <mat-grid-tile [colspan]="1">{{cont.value}}</mat-grid-tile>
                         <mat-grid-tile [colspan]="4">{{cont.title}}</mat-grid-tile>
-                        <mat-grid-tile [colspan]="1">{{((cont.value * 100)/card.total).toFixed(0)}}%</mat-grid-tile>
+                        <mat-grid-tile *ngIf="cont.percentage" [colspan]="1">{{((cont.value * 100)/card.total).toFixed(0)}}%</mat-grid-tile>
                     </mat-grid-list>
                 </mat-card-content>
             </mat-card>

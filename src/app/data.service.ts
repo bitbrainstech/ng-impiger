@@ -15,6 +15,14 @@ export class DataService {
         resolve(data);
       });
     });
+  }
 
+  async getUser () {
+    return new Promise((resolve, reject) => {
+      this.http.get('/assets/user.json').subscribe((data) => {
+        console.log (data);
+        resolve(data);
+      });
+    });
   }
 }

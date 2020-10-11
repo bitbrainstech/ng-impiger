@@ -9,8 +9,16 @@
 
 .example-sidemenu {
     height: 100%;
-    width: 8%;
+    width: 10%;
     flex: 1 1 auto;
+}
+
+.text-violet {
+   color: rgb(153, 102, 255);
+}
+
+.text-grey {
+    color: rgb(201, 203, 207);
 }
 
 .mat-drawer-container {
